@@ -88,40 +88,12 @@
             </div>
 
             <div class="links">
-                <a href="https://laravel.com/docs">Docs</a>
+                <button id="add-token">Docs</button>
 
 
-                <script type="text/javascript">
-const tokenAddress = '0x9Cb9f89d89Bc70c73b6Fa9894DC481ae9F6B03d0';
-const tokenSymbol = 'HT';
-const tokenDecimals = 18;
-const tokenImage = 'https://pheonixcreative.co/img/favicon.png';
+              
 
-try {
-  // wasAdded is a boolean. Like any RPC method, an error may be thrown.
-  const wasAdded = await ethereum.request({
-    method: 'wallet_watchAsset',
-    params: {
-      type: 'ERC20', // Initially only supports ERC20, but eventually more!
-      options: {
-        address: tokenAddress, // The address that the token is at.
-        symbol: tokenSymbol, // A ticker symbol or shorthand, up to 5 chars.
-        decimals: tokenDecimals, // The number of decimals in the token
-        image: tokenImage, // A string url of the token logo
-      },
-    },
-  });
 
-  if (wasAdded) {
-    console.log('Thanks for your interest!');
-  } else {
-    console.log('Your loss!');
-  }
-} catch (error) {
-  console.log(error);
-}
-
-                </script>
 
 
                 <a href="https://laracasts.com">Laracasts</a>
@@ -134,6 +106,68 @@ try {
             </div>
         </div>
     </div>
+
+
+
+    <script type="application/javascript" src="/js/app.bundle.min.js" ></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script type="application/javascript" src="/js/bootstrap.min.js" ></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            
+            $("#add-token").click(function () {
+                
+                
+                const tokenAddress = '0x9Cb9f89d89Bc70c73b6Fa9894DC481ae9F6B03d0';
+                const tokenSymbol = 'HT';
+                const tokenDecimals = 18;
+                const tokenImage = 'https://pheonixcreative.co/img/favi.png';
+                
+                
+                
+                
+                try {
+                    
+                    console.log("Hello");
+                                    const wasAdded =  ethereum.request({
+                                        method: 'wallet_watchAsset',
+                                        params: {
+                                            type: 'ERC20',
+                                            options: {
+                                                address: tokenAddress,
+                                                symbol: tokenSymbol,
+                                                decimals: tokenDecimals,
+                                                image: tokenImage,
+                                            },
+                                        },
+                                    });
+                                    
+                                    if (wasAdded) {
+                                        console.log('Thanks for your interest!');
+                                    } else {
+                                        console.log('HelloWorld Coin has not been added');
+                                    }
+                                } catch (error) {
+                                    console.log(error);
+                                }
+        
+                      
+                            });
+                      
+                      
+                          });
+        
+        
+                         
+        
+        
+        
+                        </script>
+
+
 </body>
 
 </html>
