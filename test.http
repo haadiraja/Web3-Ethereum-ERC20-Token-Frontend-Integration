@@ -1,0 +1,13 @@
+GET http://127.0.0.1:8000/api/posts HTTP/1.1
+
+###
+
+POST http://127.0.0.1:8000/api/post HTTP/1.1
+
+Content-Type: application/json
+
+
+{
+    "title": "Post 3",
+    "content" : "Content 3 adfnj kasnfklahjs lkfjnlskfj  3 33 3 3 3 "
+}
